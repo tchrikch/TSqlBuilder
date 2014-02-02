@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TSqlBuilder.Builder" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TSqlBuilder.SelectBuilder" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IoAAAQDAACAAAgAAAABAAAIEAAEAgIAgAAAAQAIAQAA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TSqlBuilder.StringExtensions" Collapsed="true">
+    <Position X="11.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="TSqlBuilder.ISelectBuilder">
+    <Position X="11.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TSqlBuilder.ITableSelect">
+    <Position X="13.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TSqlBuilder.IClauseBuilder" Collapsed="true">
+    <Position X="6" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TSqlBuilder.IWhereBuilder" Collapsed="true">
+    <Position X="9" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TSqlBuilder.IComplexWhereBuilder" Collapsed="true">
+    <Position X="6" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TSqlBuilder.IConditionBuilder&lt;T&gt;" Collapsed="true">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TSqlBuilder.IGroupByBuilder" Collapsed="true">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TSqlBuilder.IOrderByBuilder" Collapsed="true">
+    <Position X="6" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAACAAAAAAAABAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TSqlBuilder.IHavingBuilder" Collapsed="true">
+    <Position X="6" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TSqlBuilder.IComplexHavingBuilder" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TSqlBuilder.ITSqlBuilder" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
