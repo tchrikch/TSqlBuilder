@@ -7,7 +7,7 @@ namespace TSqlBuilder.Tests
     {
         private IClauseBuilder GetBuilder()
         {
-            return Builder.Sql.Select().From("Table1");
+            return Builder.Select().From("Table1");
         } 
 
         [Test]

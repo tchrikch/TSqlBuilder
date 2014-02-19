@@ -1,131 +1,231 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="TSqlBuilder.Builder">
-    <Position X="2.75" Y="5.75" Width="1.5" />
+  <Class Name="TSqlBuilder.DeleteBuilder" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>IgAAAABAAAAAAgAAAAAAAAIAAAEAgIAgAAAAAAIAAAA=</HashCode>
+      <FileName>Delete.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TSqlBuilder.Builder" Collapsed="true">
+    <Position X="23.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAQAAAAAA=</HashCode>
       <FileName>Select.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TSqlBuilder.SelectBuilder" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="0.75" Y="6.25" Width="1.5" />
+    <Position X="26.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>soAAAQDEACAAAwgAAABAAAIMAAEAwIAgABgAQAIQQIA=</HashCode>
+      <HashCode>soAAAQDEACAAAwgEAABAAAIMAAEAwKAgABgAQAIQQIA=</HashCode>
       <FileName>Select.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="TSqlBuilder.StringExtensions" Collapsed="true">
-    <Position X="3" Y="7.5" Width="1.5" />
+    <Position X="23.25" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAACAAAAAAAAAAAAAAAAgACAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Select.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TSqlBuilder.KeyWords" Collapsed="true">
-    <Position X="0.75" Y="7.5" Width="1.5" />
+    <Position X="25" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IoAAACCAACAAAAAAAAJAAAAECAEAAAAggAAAQAAAAMA=</HashCode>
+      <HashCode>IoAAACCAACAAAAAAAAJAAAAECAEAAAAggAAAQAABAOA=</HashCode>
       <FileName>Select.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="TSqlBuilder.ISelectBuilder">
-    <Position X="0.75" Y="3.25" Width="1.5" />
+  <Class Name="TSqlBuilder.JoinData" Collapsed="true">
+    <Position X="26.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIIAAAAAABAAQAAFAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TSqlBuilder.JoinModeConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TSqlBuilder.Conditions" Collapsed="true">
+    <Position X="25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABACA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="TSqlBuilder.IDeleteBuilder" Collapsed="true">
+    <Position X="13.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Delete.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TSqlBuilder.IDeleteComplexWhereBuilder" Collapsed="true">
+    <Position X="15.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Delete.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TSqlBuilder.ISelectBuilder" Collapsed="true">
+    <Position X="26.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
       <FileName>Select.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="TSqlBuilder.INonAliasedTableSelect">
-    <Position X="0.75" Y="1.75" Width="1.5" />
+  <Interface Name="TSqlBuilder.INonAliasedTableSelect" Collapsed="true">
+    <Position X="12" Y="12.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
       <FileName>Select.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="TSqlBuilder.IClauseBuilder" Collapsed="true">
-    <Position X="3" Y="3.75" Width="1.5" />
+  <Interface Name="TSqlBuilder.IAliasedTableSelect" Collapsed="true">
+    <Position X="12" Y="11" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Select.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="TSqlBuilder.IWhereBuilder" Collapsed="true">
-    <Position X="4.75" Y="2" Width="1.5" />
+  <Interface Name="TSqlBuilder.IFromClause&lt;T&gt;" Collapsed="true">
+    <Position X="8.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TSqlBuilder.INonAliasedJoinBuilder" Collapsed="true">
+    <Position X="23.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TSqlBuilder.IJoinBuilder" Collapsed="true">
+    <Position X="15.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TSqlBuilder.IJoinConditionBuilder" Collapsed="true">
+    <Position X="6" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TSqlBuilder.IClauseBuilder" Collapsed="true">
+    <Position X="15.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TSqlBuilder.IWhereBuilder&lt;T&gt;" Collapsed="true">
+    <Position X="15.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Select.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="TSqlBuilder.IComplexWhereBuilder" Collapsed="true">
-    <Position X="6.5" Y="6.5" Width="1.5" />
+  <Interface Name="TSqlBuilder.ISelectComplexWhereBuilder" Collapsed="true">
+    <Position X="15.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Select.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="TSqlBuilder.ILogicConditionBuilder&lt;T&gt;" Collapsed="true">
-    <Position X="12" Y="0.5" Width="1.5" />
+    <Position X="14.25" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
       <FileName>Select.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Interface Name="TSqlBuilder.IOrderConditionBuilder&lt;T&gt;" Collapsed="true">
+    <Position X="3.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Interface Name="TSqlBuilder.IGroupByBuilder" Collapsed="true">
-    <Position X="6.5" Y="2" Width="1.5" />
+    <Position X="13.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Select.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Interface Name="TSqlBuilder.IComplexGroupByBuilder" Collapsed="true">
+    <Position X="17.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Interface Name="TSqlBuilder.IOrderByBuilder" Collapsed="true">
-    <Position X="3" Y="2" Width="1.5" />
+    <Position X="17.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Select.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Interface Name="TSqlBuilder.IComplexOrderByBuilder" Collapsed="true">
+    <Position X="11.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Select.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Interface Name="TSqlBuilder.IHavingBuilder" Collapsed="true">
-    <Position X="8.25" Y="2" Width="1.5" />
+    <Position X="17.75" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Select.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="TSqlBuilder.IComplexHavingBuilder" Collapsed="true">
-    <Position X="12" Y="5" Width="1.5" />
+    <Position X="20.75" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Select.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="TSqlBuilder.ITSqlBuilder" Collapsed="true">
-    <Position X="4.75" Y="0.5" Width="1.5" />
+    <Position X="11.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
       <FileName>Select.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="TSqlBuilder.IOrderConditionBuilder&lt;T&gt;" Collapsed="true">
-    <Position X="10" Y="0.5" Width="1.5" />
+  <Interface Name="TSqlBuilder.IOneWayConverter&lt;TType&gt;" Collapsed="true">
+    <Position X="25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Select.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="TSqlBuilder.IComplexGroupByBuilder" Collapsed="true">
-    <Position X="8.25" Y="6.5" Width="1.5" />
+  <Enum Name="TSqlBuilder.JoinMode" Collapsed="true">
+    <Position X="23.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAEAAAAAIAAAIAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
       <FileName>Select.cs</FileName>
     </TypeIdentifier>
-  </Interface>
-  <Interface Name="TSqlBuilder.IComplexOrderByBuilder" Collapsed="true">
-    <Position X="10" Y="6.5" Width="1.5" />
+  </Enum>
+  <Enum Name="TSqlBuilder.LikeMode" Collapsed="true">
+    <Position X="25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACICAAAAAAAA=</HashCode>
       <FileName>Select.cs</FileName>
     </TypeIdentifier>
-  </Interface>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

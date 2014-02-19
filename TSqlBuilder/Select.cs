@@ -1,15 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace TSqlBuilder
 {
     public class Builder
     {
-        public static ISelectBuilder Sql { get { return new SelectBuilder(); } }
+        public static INonAliasedTableSelect Select(params string[] columns)
+        {
+            return new SelectBuilder().Select(columns);
+        }
+
+        public static IDeleteBuilder Delete { get { return new DeleteBuilder(); } }
     }
 
-    public class SelectBuilder : ISelectBuilder, INonAliasedTableSelect, IJoinBuilder,IJoinConditionBuilder,INonAliasedJoinBuilder, IComplexWhereBuilder, IComplexGroupByBuilder, IComplexHavingBuilder, IComplexOrderByBuilder
+    public class SelectBuilder : ISelectBuilder, INonAliasedTableSelect, IJoinBuilder, IJoinConditionBuilder, INonAliasedJoinBuilder, ISelectComplexWhereBuilder, IComplexGroupByBuilder, IComplexHavingBuilder, IComplexOrderByBuilder
     {
         private readonly IList<string> _columns = new List<string>();
         private string _table;
@@ -132,7 +136,7 @@ namespace TSqlBuilder
             return DoHaving(conditions, KeyWords.And);
         }
 
-        public IComplexWhereBuilder Where(params string[] conditions)
+        public ISelectComplexWhereBuilder Where(params string[] conditions)
         {
             return DoWhere(conditions, KeyWords.And);
         }
@@ -184,7 +188,7 @@ namespace TSqlBuilder
             }
         }
 
-        public IComplexWhereBuilder And(params string[] conditions)
+        public ISelectComplexWhereBuilder And(params string[] conditions)
         {
             return Where(conditions);
         }
@@ -199,7 +203,7 @@ namespace TSqlBuilder
             return DoHaving(conditions, KeyWords.And);
         }
 
-        public IComplexWhereBuilder Or(params string[] conditions)
+        public ISelectComplexWhereBuilder Or(params string[] conditions)
         {
             return DoWhere(conditions, KeyWords.Or, true);
         }
@@ -216,7 +220,7 @@ namespace TSqlBuilder
             return this;
         }
 
-        private IComplexWhereBuilder DoWhere(IEnumerable<string> conditions,string prefix,bool shouldWrapStatement = false)
+        private ISelectComplexWhereBuilder DoWhere(IEnumerable<string> conditions, string prefix, bool shouldWrapStatement = false)
         {
             var existingConditions = conditions.Where(condition => !string.IsNullOrEmpty(condition)).ToList();
             if (existingConditions.Count == 0) return this;
@@ -272,24 +276,35 @@ namespace TSqlBuilder
 
             return this;
         }
-    }
 
+        public override string ToString()
+        {
+            return Build();
+        }
+    }
 
     public interface ISelectBuilder
     {
         INonAliasedTableSelect Select(params string[] columns);
     }
 
+
+
     public interface INonAliasedTableSelect : IAliasedTableSelect
     {
         IJoinBuilder As(string alias);
     }
 
-    public interface IAliasedTableSelect : IClauseBuilder
+    public interface IAliasedTableSelect : IFromClause<INonAliasedTableSelect>, IClauseBuilder
     {
-        INonAliasedTableSelect From(string table);
-        INonAliasedTableSelect From(string schema, string table);
-        INonAliasedTableSelect From(string catalog, string schema, string table);
+        
+    }
+
+    public interface IFromClause<out T>
+    {
+        T From(string table);
+        T From(string schema, string table);
+        T From(string catalog, string schema, string table);
     }
 
     public interface INonAliasedJoinBuilder
@@ -304,25 +319,24 @@ namespace TSqlBuilder
         INonAliasedJoinBuilder Join(JoinMode mode, string catalog, string schema, string table);
     }
 
-
     public interface IJoinConditionBuilder : ITSqlBuilder
     {
         IJoinBuilder On(params string[] conditions);
     }
 
-    public interface IClauseBuilder : IWhereBuilder , IGroupByBuilder, IHavingBuilder
+    public interface IClauseBuilder : IWhereBuilder<ISelectComplexWhereBuilder> , IGroupByBuilder, IHavingBuilder
     {
         
     }
 
-    public interface IWhereBuilder : ITSqlBuilder
+    public interface IWhereBuilder<out T> : ITSqlBuilder
     {
-        IComplexWhereBuilder Where(params string[] conditions);
+        T Where(params string[] conditions);
     }
 
-    public interface IComplexWhereBuilder : IGroupByBuilder, ILogicConditionBuilder<IComplexWhereBuilder>
+    public interface ISelectComplexWhereBuilder : IGroupByBuilder, IOrderByBuilder, ILogicConditionBuilder<ISelectComplexWhereBuilder>
     {
-
+        
     }
 
     public interface ILogicConditionBuilder<out T>
@@ -414,6 +428,7 @@ namespace TSqlBuilder
         public static string On = "ON";
         public static string Where = "WHERE";
         public static string Select = "SELECT";
+        public static string Delete = "DELETE";
         public static string From = "FROM";
         public static string Star = "*";
         public static string Comma = ",";
@@ -425,6 +440,8 @@ namespace TSqlBuilder
         public static string Descending = "DESC";
         public static string Space = " ";
         public static string Having = "HAVING";
+        public static string In = "IN";
+        public static string Like = "LIKE";
     }
 
     class JoinData
@@ -457,7 +474,7 @@ namespace TSqlBuilder
 
     class JoinModeConverter : IOneWayConverter<JoinMode>
     {
-        private IDictionary<JoinMode, string> _values = new Dictionary<JoinMode, string>
+        private readonly IDictionary<JoinMode, string> _values = new Dictionary<JoinMode, string>
             {
                 {JoinMode.RightOuter, "RIGHT OUTER JOIN"},
                 {JoinMode.Inner, "INNER JOIN"},
@@ -475,4 +492,39 @@ namespace TSqlBuilder
     {
         string Convert(TType data);
     }
+
+    public class Conditions
+    {
+        public static string In(string column,IEnumerable<object> values)
+        {
+            return string.Format("{0} {1} ({2})", column.TryQuote(), KeyWords.In, string.Join(KeyWords.Comma,values.Select(v=>v.ToString())));
+        }
+
+        public static string Like(string column ,string value,LikeMode mode)
+        {
+            string localValue;
+            switch (mode)
+            {
+                case LikeMode.Left:
+                    localValue = "'%" + value + "'";
+                    break;
+                case LikeMode.Right:
+                    localValue = "'" + value + "%'";
+                    break;
+                default:
+                    localValue = "'%" + value + "%'";
+                    break;
+            }
+
+            return string.Format("{0} {1} ({2})", column.TryQuote(), KeyWords.Like, localValue);
+        }
+    }
+
+    public enum LikeMode
+    {
+        Left,
+        Right,
+        All
+    }
+
 }
