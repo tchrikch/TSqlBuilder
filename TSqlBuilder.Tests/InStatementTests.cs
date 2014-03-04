@@ -8,7 +8,7 @@ namespace TSqlBuilder.Tests
         [SetUp]
         public void Init()
         {
-            _nonAliasedTableSelect = Builder.Select().From("Test");
+            _nonAliasedTableSelect = Builder.Select.Columns().From("Test");
         }
 
         private INonAliasedTableSelect _nonAliasedTableSelect;

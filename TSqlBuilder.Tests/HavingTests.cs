@@ -5,7 +5,7 @@ namespace TSqlBuilder.Tests
     [TestFixture]
     internal sealed class HavingTests
     {
-        private static IHavingBuilder Builder { get { return TSqlBuilder.Builder.Select().From("Table1"); } }
+        private static IHavingBuilder Builder { get { return TSqlBuilder.Builder.Select.Columns().From("Table1"); } }
 
         [Test]
         public void Build_ReturnsWhereForSingleColumn()

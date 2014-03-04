@@ -5,12 +5,11 @@ namespace TSqlBuilder
 {
     public class Builder
     {
-        public static INonAliasedTableSelect Select(params string[] columns)
-        {
-            return new SelectBuilder().Select(columns);
-        }
+        public static ISelectBuilder Select { get{return new SelectBuilder();}}
 
         public static IDeleteBuilder Delete { get { return new DeleteBuilder(); } }
+
+        public static IUpdateBuilder Update {get{return new UpdateBuilder();}}
     }
 
     public class SelectBuilder : ISelectBuilder, INonAliasedTableSelect, IJoinBuilder, IJoinConditionBuilder, INonAliasedJoinBuilder, ISelectComplexWhereBuilder, IComplexGroupByBuilder, IComplexHavingBuilder, IComplexOrderByBuilder
@@ -26,9 +25,9 @@ namespace TSqlBuilder
         private readonly IList<string> _orderByData = new List<string>();
         private string _orderMode = KeyWords.Empty;
 
-        private readonly IList<JoinData> _joinDatas = new List<JoinData>(); 
+        private readonly IList<JoinData> _joinDatas = new List<JoinData>();
 
-        public INonAliasedTableSelect Select(string[] columns)
+        public INonAliasedTableSelect Columns(string[] columns)
         {
            if(columns==null)
            {
@@ -41,6 +40,11 @@ namespace TSqlBuilder
             }
 
             return this;
+        }
+
+        public INonAliasedTableSelect All()
+        {
+            return Columns(new string[0]);
         }
 
         public INonAliasedTableSelect From(string table)
@@ -285,7 +289,8 @@ namespace TSqlBuilder
 
     public interface ISelectBuilder
     {
-        INonAliasedTableSelect Select(params string[] columns);
+        INonAliasedTableSelect Columns(params string[] columns);
+        INonAliasedTableSelect All();
     }
 
 
@@ -442,6 +447,8 @@ namespace TSqlBuilder
         public static string Having = "HAVING";
         public static string In = "IN";
         public static string Like = "LIKE";
+        public static string Update = "UPDATE";
+        public static string Set = "SET";
     }
 
     class JoinData

@@ -5,7 +5,7 @@ namespace TSqlBuilder.Tests
     [TestFixture]
     public class JoinTests
     {
-        private IJoinBuilder JoinBuilder { get { return Builder.Select().From("Table").As(TableAlias); } }
+        private IJoinBuilder JoinBuilder { get { return Builder.Select.Columns().From("Table").As(TableAlias); } }
         private const string SomeTable = "SomeTable";
         private const string TableAlias = "T1";
         private const string JoinedTableAlias = "T2";

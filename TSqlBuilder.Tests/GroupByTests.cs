@@ -5,7 +5,7 @@ namespace TSqlBuilder.Tests
     [TestFixture]
     class GroupByTests
     {
-        private static IGroupByBuilder Builder { get { return TSqlBuilder.Builder.Select().From("A"); } }
+        private static IGroupByBuilder Builder { get { return TSqlBuilder.Builder.Select.Columns().From("A"); } }
 
         [Test]
         public void Build_ReturnsCsvForGroupByColumns()

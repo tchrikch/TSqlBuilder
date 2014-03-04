@@ -8,7 +8,7 @@ namespace TSqlBuilder.Tests
         [Test]
         public void QueryWithoutJoin()
         {
-            var query = Builder.Select()
+            var query = Builder.Select.Columns()
                 .From("Test")
                 .Where("Id=3").And("Id=5").Or("Id=7")
                 .GroupBy("Id").ThenBy("Id")
@@ -21,7 +21,7 @@ namespace TSqlBuilder.Tests
         [Test]
         public void QueryWithJoin()
         {
-            var query = Builder.Select()
+            var query = Builder.Select.Columns()
                 .From("Test").As("T1")
                 .Join(JoinMode.Inner, "Test2").As("T2").On("T1.Id=T2.Id")
                 .Where("Id=3")

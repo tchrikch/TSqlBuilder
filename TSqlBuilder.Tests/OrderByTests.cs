@@ -5,7 +5,7 @@ namespace TSqlBuilder.Tests
     [TestFixture]
     class OrderByTests
     {
-        private static IOrderByBuilder Builder { get { return TSqlBuilder.Builder.Select().From("A"); } }
+        private static IOrderByBuilder Builder { get { return TSqlBuilder.Builder.Select.Columns().From("A"); } }
 
         [Test]
         public void Build_ReturnsCsvForOrderByColumns()
