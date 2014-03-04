@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSqlBuilder", "TSqlBuilder\TSqlBuilder.csproj", "{3C6916F3-168B-4746-B7FA-4A4287927A5F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentSql", "TSqlBuilder\FluentSql.csproj", "{3C6916F3-168B-4746-B7FA-4A4287927A5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSqlBuilder.Tests", "TSqlBuilder.Tests\TSqlBuilder.Tests.csproj", "{2F42F043-8C12-46A9-BB87-9109283658C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentSql.Tests", "TSqlBuilder.Tests\FluentSql.Tests.csproj", "{2F42F043-8C12-46A9-BB87-9109283658C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

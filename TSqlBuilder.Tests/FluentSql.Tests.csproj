@@ -8,8 +8,8 @@
     <ProjectGuid>{2F42F043-8C12-46A9-BB87-9109283658C2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TSqlBuilder.Tests</RootNamespace>
-    <AssemblyName>TSqlBuilder.Tests</AssemblyName>
+    <RootNamespace>FluentSql.Tests</RootNamespace>
+    <AssemblyName>FluentSql.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -60,9 +60,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TSqlBuilder\TSqlBuilder.csproj">
+    <ProjectReference Include="..\TSqlBuilder\FluentSql.csproj">
       <Project>{3C6916F3-168B-4746-B7FA-4A4287927A5F}</Project>
-      <Name>TSqlBuilder</Name>
+      <Name>FluentSql</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

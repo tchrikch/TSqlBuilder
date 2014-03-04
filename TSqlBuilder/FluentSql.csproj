@@ -8,8 +8,8 @@
     <ProjectGuid>{3C6916F3-168B-4746-B7FA-4A4287927A5F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TSqlBuilder</RootNamespace>
-    <AssemblyName>TSqlBuilder</AssemblyName>
+    <RootNamespace>FluentSql</RootNamespace>
+    <AssemblyName>FluentSql</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -78,6 +78,7 @@
     <Compile Include="Builders\Select\SelectBuilder.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Builders\Update\UpdateBuilder.cs" />
+    <Compile Include="Script\Script.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
