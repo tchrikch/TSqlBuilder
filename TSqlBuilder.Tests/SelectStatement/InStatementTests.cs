@@ -1,4 +1,7 @@
 using NUnit.Framework;
+using TSqlBuilder.Builders;
+using TSqlBuilder.Builders.Select;
+using TSqlBuilder.Extensions;
 
 namespace TSqlBuilder.Tests
 {
@@ -8,7 +11,7 @@ namespace TSqlBuilder.Tests
         [SetUp]
         public void Init()
         {
-            _nonAliasedTableSelect = Builder.Select.Columns().From("Test");
+            _nonAliasedTableSelect = CommandBuilder.Select.Columns().From("Test");
         }
 
         private INonAliasedTableSelect _nonAliasedTableSelect;

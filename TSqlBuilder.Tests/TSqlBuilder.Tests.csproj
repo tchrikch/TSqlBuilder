@@ -43,18 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AliasTests.cs" />
+    <Compile Include="SelectStatement\AliasTests.cs" />
     <Compile Include="DeleteStatement\SimpleDeleteTests.cs" />
-    <Compile Include="FullQueriesTests.cs" />
-    <Compile Include="GroupByTests.cs" />
-    <Compile Include="HavingTests.cs" />
-    <Compile Include="InStatementTests.cs" />
-    <Compile Include="JoinTests.cs" />
-    <Compile Include="OrderByTests.cs" />
+    <Compile Include="SelectStatement\FullQueriesTests.cs" />
+    <Compile Include="SelectStatement\GroupByTests.cs" />
+    <Compile Include="SelectStatement\HavingTests.cs" />
+    <Compile Include="SelectStatement\InStatementTests.cs" />
+    <Compile Include="SelectStatement\JoinTests.cs" />
+    <Compile Include="SelectStatement\OrderByTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SelectTests.cs" />
+    <Compile Include="SelectStatement\SelectTests.cs" />
     <Compile Include="UpdateStatement\SimpleUpdateTests.cs" />
-    <Compile Include="WhereTests.cs" />
+    <Compile Include="SelectStatement\WhereTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

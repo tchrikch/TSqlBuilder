@@ -1,11 +1,13 @@
 ﻿using NUnit.Framework;
+using TSqlBuilder.Builders;
+using TSqlBuilder.Builders.Select;
 
 namespace TSqlBuilder.Tests
 {
     [TestFixture]
     class GroupByTests
     {
-        private static IGroupByBuilder Builder { get { return TSqlBuilder.Builder.Select.Columns().From("A"); } }
+        private static IGroupByBuilder Builder { get { return CommandBuilder.Select.Columns().From("A"); } }
 
         [Test]
         public void Build_ReturnsCsvForGroupByColumns()

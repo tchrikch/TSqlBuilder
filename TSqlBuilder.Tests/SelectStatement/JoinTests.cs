@@ -1,11 +1,13 @@
 using NUnit.Framework;
+using TSqlBuilder.Builders;
+using TSqlBuilder.Builders.Select;
 
 namespace TSqlBuilder.Tests
 {
     [TestFixture]
     public class JoinTests
     {
-        private IJoinBuilder JoinBuilder { get { return Builder.Select.Columns().From("Table").As(TableAlias); } }
+        private IJoinBuilder JoinBuilder { get { return CommandBuilder.Select.Columns().From("Table").As(TableAlias); } }
         private const string SomeTable = "SomeTable";
         private const string TableAlias = "T1";
         private const string JoinedTableAlias = "T2";

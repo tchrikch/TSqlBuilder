@@ -1,4 +1,6 @@
 using NUnit.Framework;
+using TSqlBuilder.Builders;
+using TSqlBuilder.Builders.General;
 
 namespace TSqlBuilder.Tests
 {
@@ -7,7 +9,7 @@ namespace TSqlBuilder.Tests
     {
         private IClauseBuilder GetBuilder()
         {
-            return Builder.Select.Columns().From("Table1");
+            return CommandBuilder.Select.Columns().From("Table1");
         } 
 
         [Test]

@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using TSqlBuilder.Builders;
 
 namespace TSqlBuilder.Tests
 {
@@ -12,7 +13,7 @@ namespace TSqlBuilder.Tests
         [Test]
         public void ShouldSkipAlias_IfNull()
         {
-            var query = Builder.Select.Columns().From(SomeTable).As(null).Build();
+            var query = CommandBuilder.Select.Columns().From(SomeTable).As(null).Build();
 
             Assert.That(query,Is.EqualTo("SELECT * FROM [Test]"));
         }
@@ -20,7 +21,7 @@ namespace TSqlBuilder.Tests
         [Test]
         public void ShouldSkipAlias_IfEmpty()
         {
-            var query = Builder.Select.Columns().From(SomeTable).As(EmptyAlias).Build();
+            var query = CommandBuilder.Select.Columns().From(SomeTable).As(EmptyAlias).Build();
 
             Assert.That(query, Is.EqualTo("SELECT * FROM [Test]"));
         }
@@ -28,7 +29,7 @@ namespace TSqlBuilder.Tests
         [Test]
         public void ShouldAddAliasToTable_WhenRequested()
         {
-            var query = Builder.Select.Columns().From(SomeTable).As(SomeAlias).Build();
+            var query = CommandBuilder.Select.Columns().From(SomeTable).As(SomeAlias).Build();
 
             Assert.That(query, Is.EqualTo("SELECT * FROM [Test] SomeAlias"));
         }
@@ -40,7 +41,7 @@ namespace TSqlBuilder.Tests
         [Test]
         public void ToString_ShouldBuildSameQuery()
         {
-            var builder = Builder.Select.Columns().From("table").Where("Id>3");
+            var builder = CommandBuilder.Select.Columns().From("table").Where("Id>3");
 
             Assert.That(builder.ToString(),Is.EqualTo(builder.Build()));
         }

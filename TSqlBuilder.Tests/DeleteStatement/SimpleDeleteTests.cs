@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
+using TSqlBuilder.Builders;
 
 namespace TSqlBuilder.Tests.DeleteStatement
 {
@@ -12,7 +13,7 @@ namespace TSqlBuilder.Tests.DeleteStatement
         [Test]
         public void T1()
         {
-            var statement = Builder.Delete.From("Test").Where("Id>0").And("Id<4").Or("Id=5").Build();
+            var statement = CommandBuilder.Delete.From("Test").Where("Id>0").And("Id<4").Or("Id=5").Build();
 
             var expectedStatement = "DELETE FROM [Test] WHERE Id>0 AND Id<4 OR Id=5";
             Assert.That(statement, Is.EqualTo(expectedStatement));

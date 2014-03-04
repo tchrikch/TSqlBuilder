@@ -1,8 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using TSqlBuilder.Builders.General;
+using TSqlBuilder.Extensions;
 
-namespace TSqlBuilder
+namespace TSqlBuilder.Builders.Delete
 {
     public class DeleteBuilder : IDeleteBuilder, IDeleteComplexWhereBuilder, IWhereBuilder<IDeleteComplexWhereBuilder>
     {
@@ -74,16 +75,6 @@ namespace TSqlBuilder
         {
             return DoWhere(conditions, KeyWords.Or, true);
         }
-    }
-
-    public interface IDeleteBuilder : IFromClause<IWhereBuilder<IDeleteComplexWhereBuilder>>, ITSqlBuilder
-    {
-        
-    }
-
-    public interface IDeleteComplexWhereBuilder : ILogicConditionBuilder<IDeleteComplexWhereBuilder> ,ITSqlBuilder
-    {
-        
     }
 }
 

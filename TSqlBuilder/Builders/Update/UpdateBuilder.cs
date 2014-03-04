@@ -1,13 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using TSqlBuilder.Builders.General;
+using TSqlBuilder.Extensions;
 
-namespace TSqlBuilder
+namespace TSqlBuilder.Builders.Update
 {
-    public interface IUpdateBuilder : ITableBuilder 
-    {
-        
-    }
-
     class UpdateBuilder : IUpdateBuilder, IUpdateComplexWhereBuilder , ISetBuilder,IWhereBuilder<IUpdateComplexWhereBuilder>
     {
         private readonly IList<string> _conditions = new List<string>();
@@ -93,24 +90,5 @@ namespace TSqlBuilder
 
             return this;
         }
-    }
-
-    public interface ITableBuilder 
-    {
-        ISetBuilder Table(string table);
-        ISetBuilder Table(string schema,string table);
-        ISetBuilder Table(string database,string schema,string table);
-    }
-
-    public interface ISetBuilder
-    {
-        IWhereBuilder<IUpdateComplexWhereBuilder> Set(params string[] conditions);
-    }
-
- 
-
-    public interface IUpdateComplexWhereBuilder : ILogicConditionBuilder<IUpdateComplexWhereBuilder>, ITSqlBuilder
-    {
-
     }
 }

@@ -1,11 +1,13 @@
 using NUnit.Framework;
+using TSqlBuilder.Builders;
+using TSqlBuilder.Builders.Select;
 
 namespace TSqlBuilder.Tests
 {
     [TestFixture]
     internal sealed class HavingTests
     {
-        private static IHavingBuilder Builder { get { return TSqlBuilder.Builder.Select.Columns().From("Table1"); } }
+        private static IHavingBuilder Builder { get { return CommandBuilder.Select.Columns().From("Table1"); } }
 
         [Test]
         public void Build_ReturnsWhereForSingleColumn()

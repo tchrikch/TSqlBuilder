@@ -40,14 +40,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Delete.cs" />
+    <Compile Include="Extensions\Conditions.cs" />
+    <Compile Include="Builders\Delete\DeleteBuilder.cs" />
+    <Compile Include="Builders\Select\IAliasedTableSelect.cs" />
+    <Compile Include="Builders\General\IClauseBuilder.cs" />
+    <Compile Include="Builders\Select\IComplexGroupByBuilder.cs" />
+    <Compile Include="Builders\Select\IComplexHavingBuilder.cs" />
+    <Compile Include="Builders\Select\IComplexOrderByBuilder.cs" />
+    <Compile Include="Builders\Delete\IDeleteBuilder.cs" />
+    <Compile Include="Builders\Delete\IDeleteComplexWhereBuilder.cs" />
+    <Compile Include="Builders\General\IFromClause.cs" />
+    <Compile Include="Builders\Select\IGroupByBuilder.cs" />
+    <Compile Include="Builders\Select\IHavingBuilder.cs" />
+    <Compile Include="Builders\Select\IJoinBuilder.cs" />
+    <Compile Include="Builders\Select\IJoinConditionBuilder.cs" />
+    <Compile Include="Builders\General\ILogicConditionBuilder.cs" />
+    <Compile Include="Builders\Select\INonAliasedJoinBuilder.cs" />
+    <Compile Include="Builders\Select\INonAliasedTableSelect.cs" />
+    <Compile Include="Converters\IOneWayConverter.cs" />
+    <Compile Include="Builders\Select\IOrderByBuilder.cs" />
+    <Compile Include="Builders\Select\IOrderConditionBuilder.cs" />
+    <Compile Include="Builders\Select\ISelectBuilder.cs" />
+    <Compile Include="Builders\Select\ISelectComplexWhereBuilder.cs" />
+    <Compile Include="Builders\Update\ISetBuilder.cs" />
+    <Compile Include="Builders\General\ITableBuilder.cs" />
+    <Compile Include="Builders\General\ITSqlBuilder.cs" />
+    <Compile Include="Builders\Update\IUpdateBuilder.cs" />
+    <Compile Include="Builders\Update\IUpdateComplexWhereBuilder.cs" />
+    <Compile Include="Builders\General\IWhereBuilder.cs" />
+    <Compile Include="Builders\Select\JoinData.cs" />
+    <Compile Include="Builders\Select\JoinMode.cs" />
+    <Compile Include="Converters\JoinModeConverter.cs" />
+    <Compile Include="Builders\General\KeyWords.cs" />
+    <Compile Include="Builders\General\LikeMode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Select.cs" />
-    <Compile Include="Update.cs" />
+    <Compile Include="Builders\CommandBuilder.cs" />
+    <Compile Include="Builders\Select\SelectBuilder.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Builders\Update\UpdateBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

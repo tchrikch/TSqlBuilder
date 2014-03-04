@@ -1,4 +1,6 @@
 using NUnit.Framework;
+using TSqlBuilder.Builders;
+using TSqlBuilder.Builders.Select;
 
 namespace TSqlBuilder.Tests
 {
@@ -8,7 +10,7 @@ namespace TSqlBuilder.Tests
         [Test]
         public void QueryWithoutJoin()
         {
-            var query = Builder.Select.Columns()
+            var query = CommandBuilder.Select.Columns()
                 .From("Test")
                 .Where("Id=3").And("Id=5").Or("Id=7")
                 .GroupBy("Id").ThenBy("Id")
@@ -21,7 +23,7 @@ namespace TSqlBuilder.Tests
         [Test]
         public void QueryWithJoin()
         {
-            var query = Builder.Select.Columns()
+            var query = CommandBuilder.Select.Columns()
                 .From("Test").As("T1")
                 .Join(JoinMode.Inner, "Test2").As("T2").On("T1.Id=T2.Id")
                 .Where("Id=3")
